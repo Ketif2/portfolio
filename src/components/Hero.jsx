@@ -1,11 +1,10 @@
-import React from 'react';
 import Button from './ui/Button';
+import profile from '../../public/profile.jpeg';
 
 const Hero = () => {
   const stats = [
-    { number: '3+', label: 'Años Experiencia' },
-    { number: '50+', label: 'Proyectos Realizados' },
-    { number: '99%', label: 'Client Satisfaction', highlight: true },
+    { number: '2+', label: 'Años Experiencia' },
+    { number: '10+', label: 'Proyectos Realizados' },
     { number: '24/7', label: 'Disponibilidad' }
   ];
 
@@ -23,8 +22,8 @@ const Hero = () => {
       description: 'Diseño centrado en el usuario con experiencias intuitivas y atractivas'
     },
     {
-      title: 'DESARROLLO FULL STACK',
-      description: 'Soluciones completas desde la base de datos hasta la interfaz de usuario'
+      title: 'AWS CLOUD',
+      description: 'Infraestructura escalable y segura para potenciar la innovación y el rendimiento en la nube.'
     }
   ];
 
@@ -41,35 +40,47 @@ const Hero = () => {
               </p>
               
               <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-                UN <span className="text-red-500">UI/UX</span>
+                UN <span className="text-red-500">DEVELOPER</span>
                 <br />
-                <span className="font-light italic">& Brand</span>
+                <span className="font-light italic">& UIUX</span>
                 <br />
-                <span className="text-red-500">DESARROLLADOR</span>
+                <span className="text-red-500">APASIONADO</span>
               </h1>
 
               <p className="text-lg text-gray-600 dark:text-gray-400 max-w-md leading-relaxed">
                 Transformando ideas en experiencias digitales increíbles - desarrollo web y diseño 
-                que cautiva, involucra y entrega resultados.
+                de experiencias.
               </p>
 
               <Button variant="primary" size="lg" className="rounded-full px-8">
-                CONTACT ME →
+                CONTÁCTAME →
               </Button>
             </div>
           </div>
 
           {/* Center - Profile Image */}
           <div className="lg:col-span-3 flex justify-center">
-            <div className="relative">
-              <div className="w-80 h-80 rounded-full overflow-hidden bg-gray-200 dark:bg-gray-700">
-                <img 
-                  src="/api/placeholder/320/320" 
-                  alt="Kevin - Desarrollador Software" 
-                  className="w-full h-full object-cover"
-                />
+            <div className="relative group">
+              {/* Background glow effect */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-red-500/20 via-red-500/10 to-transparent rounded-full blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
+              
+              {/* Main image container */}
+              <div className="relative w-80 h-80 rounded-full overflow-hidden bg-gradient-to-br from-red-500/20 to-transparent p-1">
+                <div className="w-full h-full rounded-full overflow-hidden bg-gray-200 dark:bg-gray-700 shadow-2xl">
+                  <img 
+                    src={profile}
+                    alt="Kevin - Desarrollador Software" 
+                    className="w-full h-full object-cover object-center filter brightness-110 contrast-110 hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
               </div>
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-red-500 rounded-full"></div>
+              
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-red-500 rounded-full shadow-lg animate-pulse"></div>
+              <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-red-400 rounded-full opacity-70"></div>
+              
+              {/* Floating ring */}
+              <div className="absolute -inset-2 border-2 border-red-500/30 rounded-full animate-spin-slow opacity-60"></div>
             </div>
           </div>
 

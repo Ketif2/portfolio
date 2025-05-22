@@ -10,48 +10,55 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const handleNavClick = (href) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
   const navLinks = [
     { href: '#inicio', label: 'Home' },
-    { href: '#services', label: 'Services' },
-    { href: '#about', label: 'About' },
-    { href: '#resume', label: 'Skills' },
-    { href: '#proyectos', label: 'Portfolio' },
-    { href: '#contact', label: 'Contact' }
+    { href: '#about', label: 'About Me' },
+    { href: '#resume', label: 'Resume' },
+    { href: '#skills', label: 'Skills' }, 
+    { href: '#proyectos', label: 'Projects' },
+    { href: '#contact', label: 'Contact Me' }
   ];
 
-  return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md">
+   return (
+    <nav className="fixed top-0 left-0 right-0 z-50  backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
           <div className="text-xl font-bold">
             ● <span className="text-red-500">KEVIN</span>
           </div>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium hover:text-red-500 transition-colors"
+              <button
+                key={`${link.href}-${link.label}`}
+                onClick={() => handleNavClick(link.href)}
+                className="text-sm font-medium hover:text-red-500 transition-colors cursor-pointer"
               >
                 {link.label}
-              </a>
+              </button>
             ))}
           </div>
 
-          {/* Right side controls */}
           <div className="flex items-center space-x-4">
-            {/* Theme Toggle */}
             <button
               onClick={toggleDarkMode}
               className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             >
-              {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
+              {isDarkMode ? <Sun size={24} /> : <Moon size={24} />}
             </button>
             
-            {/* Mobile Menu Button */}
+            {/* Mobile */}
             <div className="md:hidden">
               <button
                 onClick={toggleMobileMenu}
@@ -59,13 +66,6 @@ const Navbar = () => {
               >
                 <span>MENU</span>
                 {isMobileMenuOpen ? <X size={16} /> : <Menu size={16} />}
-              </button>
-            </div>
-
-            {/* Desktop Menu Button */}
-            <div className="hidden md:block">
-              <button className="bg-gray-900 dark:bg-gray-700 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors">
-                MENU
               </button>
             </div>
           </div>
@@ -77,14 +77,13 @@ const Navbar = () => {
         <div className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
           <div className="px-4 py-4 space-y-3">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="block py-2 text-sm font-medium hover:text-red-500 transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
+              <button
+                key={`mobile-${link.href}-${link.label}`}
+                onClick={() => handleNavClick(link.href)}
+                className="block w-full text-left py-2 text-sm font-medium hover:text-red-500 transition-colors"
               >
                 {link.label}
-              </a>
+              </button>
             ))}
           </div>
         </div>

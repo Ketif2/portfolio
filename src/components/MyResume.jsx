@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import TabNavigation from './ui/TabNavigation';
 import TrajectoryTab from './resume/TrajectoryTab';
 import InterestsTab from './resume/InterestsTab';

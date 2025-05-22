@@ -1,11 +1,11 @@
-import React, { useState, createContext, useContext } from 'react';
+import { useState, createContext, useContext } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutMe from './components/AboutMe';
 import MyResume from './components/MyResume';
 import NavigationTimeline from './components/ui/NavigationTimeline';
+import Skills from './components/Skills';
 
-// Theme Context
 const ThemeContext = createContext();
 
 export const useTheme = () => {
@@ -34,6 +34,8 @@ const App = () => {
           <Hero />
           <AboutMe />
           <MyResume />
+          <Skills/>
+
           {/* Secciones placeholder para navegación */}
           <section id="proyectos" className="py-20 px-4">
             <div className="max-w-4xl mx-auto">
@@ -51,6 +53,7 @@ const App = () => {
               </div>
             </div>
           </section>
+
         </main>
       </div>
     </ThemeContext.Provider>
