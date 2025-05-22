@@ -1,1 +1,109 @@
 @import "tailwindcss";
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes rippleEffect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.skill-item-animated {
+  animation: slideInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.skill-item-animated:hover {
+  animation: float 2s ease-in-out infinite;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(239, 68, 68, 0.6);
+  transform: scale(0);
+  animation: rippleEffect 0.6s linear;
+  pointer-events: none;
+  width: 20px;
+  height: 20px;
+  margin-left: -10px;
+  margin-top: -10px;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #ef4444;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.particle-1 {
+  top: 10%;
+  right: 10%;
+  animation-delay: 0.1s;
+}
+
+.particle-2 {
+  top: 30%;
+  right: 5%;
+  animation-delay: 0.2s;
+}
+
+.particle-3 {
+  bottom: 20%;
+  right: 15%;
+  animation-delay: 0.3s;
+}
+
+.skill-item-animated:hover .particle {
+  opacity: 1;
+  animation: float 1.5s ease-in-out infinite;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Infinite scroll animation - más rápido y sin repeticiones */
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-160%);
+  }
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 20s linear infinite;
+  will-change: transform;
+}
+
+.pause-animation:hover {
+  animation-play-state: paused;
+}

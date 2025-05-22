@@ -1,5 +1,5 @@
 import Button from './ui/Button';
-import profile from '../../public/profile.jpeg';
+import profile from '../assets/Profile.jpeg';
 
 const Hero = () => {
   const stats = [

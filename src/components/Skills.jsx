@@ -1,121 +1,74 @@
+import { skillsData } from '../data/Data';
+
 const Skills = () => {
-  const skillCategories = [
-    {
-      title: 'Lenguajes de Programación',
-      skills: [
-        { name: 'JavaScript', level: 90, color: 'bg-yellow-500' },
-        { name: 'TypeScript', level: 85, color: 'bg-blue-600' },
-        { name: 'Python', level: 80, color: 'bg-green-500' },
-        { name: 'Java', level: 75, color: 'bg-red-600' },
-        { name: 'C#', level: 70, color: 'bg-purple-600' }
-      ]
-    },
-    {
-      title: 'Frontend',
-      skills: [
-        { name: 'React', level: 90, color: 'bg-cyan-500' },
-        { name: 'Vue.js', level: 80, color: 'bg-green-600' },
-        { name: 'HTML/CSS', level: 95, color: 'bg-orange-500' },
-        { name: 'Tailwind CSS', level: 90, color: 'bg-teal-500' },
-        { name: 'SASS/SCSS', level: 85, color: 'bg-pink-500' }
-      ]
-    },
-    {
-      title: 'Backend',
-      skills: [
-        { name: 'Node.js', level: 85, color: 'bg-green-600' },
-        { name: 'Express.js', level: 80, color: 'bg-gray-700' },
-        { name: 'Django', level: 75, color: 'bg-green-700' },
-        { name: 'Spring Boot', level: 70, color: 'bg-green-600' },
-        { name: 'ASP.NET', level: 65, color: 'bg-blue-700' }
-      ]
-    },
-    {
-      title: 'Bases de Datos',
-      skills: [
-        { name: 'PostgreSQL', level: 85, color: 'bg-blue-800' },
-        { name: 'MongoDB', level: 80, color: 'bg-green-800' },
-        { name: 'MySQL', level: 85, color: 'bg-blue-600' },
-        { name: 'Redis', level: 70, color: 'bg-red-700' },
-        { name: 'Firebase', level: 75, color: 'bg-yellow-600' }
-      ]
-    },
-    {
-      title: 'DevOps & Deploy',
-      skills: [
-        { name: 'Docker', level: 80, color: 'bg-blue-500' },
-        { name: 'Git/GitHub', level: 95, color: 'bg-gray-800' },
-        { name: 'Vercel', level: 90, color: 'bg-black' },
-        { name: 'Netlify', level: 85, color: 'bg-teal-600' },
-        { name: 'Railway', level: 75, color: 'bg-purple-700' }
-      ]
-    },
-    {
-      title: 'Nube & Servicios',
-      skills: [
-        { name: 'AWS', level: 75, color: 'bg-orange-600' },
-        { name: 'Google Cloud', level: 70, color: 'bg-blue-500' },
-        { name: 'Azure', level: 65, color: 'bg-blue-700' },
-        { name: 'Cloudflare', level: 80, color: 'bg-orange-500' },
-        { name: 'Supabase', level: 85, color: 'bg-green-600' }
-      ]
-    }
-  ];
+  // Solo duplicar para evitar repeticiones visibles
+  const duplicatedSkills = [...skillsData, ...skillsData];
+
+  const SkillCard = ({ skill, index }) => {
+    return (
+      <div className="flex-shrink-0 w-32 md:w-40">
+        <div className="group bg-gray-800 hover:bg-gray-700 rounded-xl p-4 md:p-6 transition-all duration-300 border border-gray-700 hover:border-red-500/50 hover:scale-105 hover:-translate-y-2 hover:shadow-xl hover:shadow-red-500/10 mx-2">
+          
+          {/* Icon */}
+          <div className="text-center mb-3">
+            <div className="w-12 h-12 md:w-16 md:h-16 mx-auto bg-gray-700 group-hover:bg-red-500 rounded-xl flex items-center justify-center text-2xl md:text-3xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-lg">
+              {skill.icon}
+            </div>
+          </div>
+          
+          {/* Name */}
+          <div className="text-center">
+            <h3 className="text-white font-medium text-xs md:text-sm group-hover:text-red-400 transition-colors duration-300 leading-tight">
+              {skill.name}
+            </h3>
+          </div>
+          
+          {/* Decorative dot */}
+          <div className="flex justify-center mt-2">
+            <div className="w-1 h-1 bg-red-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   return (
-    <section id="skills" className="py-20 px-4">
+    <section id="skills" className="py-20 px-4 bg-gray-900 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Skills</h2>
-        <p className="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
-          Tecnologías y herramientas que domino para crear soluciones completas y escalables
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {skillCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-              <h3 className="text-xl font-bold mb-6 text-center text-red-500">
-                {category.title}
-              </h3>
-              
-              <div className="space-y-4">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex}>
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm font-medium">{skill.name}</span>
-                      <span className="text-sm text-gray-600 dark:text-gray-400">{skill.level}%</span>
-                    </div>
-                    
-                    {/* Progress Bar */}
-                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                      <div
-                        className={`h-2 rounded-full ${skill.color} transition-all duration-1000 ease-out`}
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
+        
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+            <span className="text-red-500">TECH</span> SKILLS 
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+            Tecnologías y herramientas que domino
+          </p>
+          <div className="w-20 h-1 bg-red-500 mx-auto mt-4 rounded-full"></div>
         </div>
 
-        {/* Additional Info */}
-        <div className="mt-12 text-center">
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
-            Siempre aprendiendo y manteniéndome actualizado con las últimas tecnologías
-          </p>
-          <div className="flex justify-center space-x-4 text-sm">
-            <span className="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-3 py-1 rounded-full">
-              Aprendizaje Continuo
-            </span>
-            <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">
-              Certificaciones Activas
-            </span>
-            <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full">
-              Proyectos Reales
+        <div className="relative">
+          <div className="overflow-hidden">
+            <div className="flex animate-infinite-scroll p-4">
+              {duplicatedSkills.map((skill, index) => (
+                <SkillCard 
+                  key={`${skill.name}-${index}`}
+                  skill={skill}
+                  index={index}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-16 text-center">
+          <div className="inline-flex items-center space-x-3 bg-gray-800 rounded-2xl px-6 py-3 border border-gray-700 hover:border-red-500/30 transition-all duration-300">
+            <span className="text-gray-300 text-sm font-medium">
+              Tech <span className="text-red-500">Stack</span>
             </span>
           </div>
         </div>
+        
       </div>
     </section>
   );

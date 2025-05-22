@@ -30,14 +30,13 @@ const MyResume = () => {
           <ActiveComponent />
         </div>
 
-        {/* Tab Indicators */}
         <div className="flex justify-center mt-6 space-x-2">
           {tabs.map((_, index) => (
             <button
               key={index}
               onClick={() => setActiveTab(index)}
               className={`w-3 h-3 rounded-full transition-colors ${
-                activeTab === index ? 'bg-green-500' : 'bg-gray-400'
+                activeTab === index ? 'bg-red-500' : 'bg-gray-400'
               }`}
             />
           ))}
