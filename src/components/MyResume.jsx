@@ -18,7 +18,9 @@ const MyResume = () => {
   return (
     <section id="resume" className="py-20 px-4">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">My Resume</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+          <span className="text-red-500">MY</span> RESUME
+        </h2>
         
         <TabNavigation 
           tabs={tabs}

@@ -5,6 +5,8 @@ import AboutMe from './components/AboutMe';
 import MyResume from './components/MyResume';
 import NavigationTimeline from './components/ui/NavigationTimeline';
 import Skills from './components/Skills';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
 
 const ThemeContext = createContext();
 
@@ -30,31 +32,12 @@ const App = () => {
       }`}>
         <Navbar />
         <NavigationTimeline />
-        <main className="pt-16">
-          <Hero />
-          <AboutMe />
-          <MyResume />
-          <Skills/>
-
-          {/* Secciones placeholder para navegación */}
-          <section id="proyectos" className="py-20 px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Proyectos</h2>
-              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-8 text-center">
-                <p className="text-lg">Sección de proyectos en construcción...</p>
-              </div>
-            </div>
-          </section>
-          <section id="contact" className="py-20 px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Contact</h2>
-              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-8 text-center">
-                <p className="text-lg">Sección de contacto en construcción...</p>
-              </div>
-            </div>
-          </section>
-
-        </main>
+        <Hero />
+        <AboutMe />
+        <MyResume />
+        <Skills/>
+        <Projects />
+        <Contact />
       </div>
     </ThemeContext.Provider>
   );

@@ -1,4 +1,3 @@
-import Button from './ui/Button';
 import profile from '../assets/Profile.jpeg';
 
 const Hero = () => {
@@ -51,10 +50,17 @@ const Hero = () => {
                 Transformando ideas en experiencias digitales increíbles - desarrollo web y diseño 
                 de experiencias.
               </p>
-
-              <Button variant="primary" size="lg" className="rounded-full px-8">
-                CONTÁCTAME →
-              </Button>
+              
+              <a 
+                href="/path-to-your-cv.pdf" // Reemplaza con la ruta real de tu CV
+                download="Kevin_Revelo_CV.pdf"
+                className="inline-flex items-center space-x-2 bg-red-500 hover:bg-red-600 text-white font-semibold px-8 py-3 rounded-full transition-colors duration-200"
+              >
+                <span>DESCARGAR CV</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-4-4m4 4l4-4m-4-4V3" />
+                </svg>
+              </a>
             </div>
           </div>
 
