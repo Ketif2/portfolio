@@ -7,7 +7,7 @@ const AboutMe = () => {
       <div className="max-w-5xl mx-auto relative">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            ABOUT <span className="text-red-500">ME</span>
+            <span className="text-red-500">ABOUT </span>ME
           </h2>
           <div className="w-20 h-1 bg-red-500 mx-auto rounded-full"></div>
         </div>
@@ -16,7 +16,7 @@ const AboutMe = () => {
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 via-transparent to-red-500/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
               
-              <div className="relative bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-700/50 hover:border-red-500/30 transition-all duration-300">
+              <div className="relative dark:bg-gray-800/20 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-700/50 hover:border-red-500/30 transition-all duration-300">
                 <div className="text-center space-y-4">
                   <div className="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl mx-auto flex items-center justify-center rotate-3 hover:rotate-6 transition-transform duration-300">
                     <span className="text-2xl font-bold text-white">KR</span>

@@ -1,4 +1,5 @@
 import profile from '../assets/Profile.jpeg';
+import { Github, Linkedin } from 'lucide-react';
 
 const Hero = () => {
   const stats = [
@@ -31,10 +32,9 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
-          {/* Left Content */}
           <div className="lg:col-span-6 space-y-8">
             <div className="space-y-6">
-              <p className="text-gray-600 dark:text-gray-400 text-lg">
+              <p className="dark:text-gray-800/300 text-lg">
                 Hola, Soy Kevin
               </p>
               
@@ -46,13 +46,13 @@ const Hero = () => {
                 <span className="text-red-500">APASIONADO</span>
               </h1>
 
-              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-md leading-relaxed">
+              <p className="text-lg dark:text-gray-800/300 max-w-md leading-relaxed">
                 Transformando ideas en experiencias digitales increíbles - desarrollo web y diseño 
                 de experiencias.
               </p>
               
               <a 
-                href="/path-to-your-cv.pdf" // Reemplaza con la ruta real de tu CV
+                href="/cv/CV_KevinRevelo.pdf" 
                 download="Kevin_Revelo_CV.pdf"
                 className="inline-flex items-center space-x-2 bg-red-500 hover:bg-red-600 text-white font-semibold px-8 py-3 rounded-full transition-colors duration-200"
               >
@@ -61,16 +61,34 @@ const Hero = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-4-4m4 4l4-4m-4-4V3" />
                 </svg>
               </a>
+              <div className="flex items-center space-x-3">
+                  <a
+                    href="https://github.com/Ketif2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-4 bg-gray-100 dark:bg-gray-500/10 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full transition-all duration-300 hover:scale-110 group"
+                    title="Ver GitHub"
+                  >
+                    <Github className="w-6 h-6 dark:text-gray-800/700 group-hover:text-red-500" />
+                  </a>
+                  
+                  <a
+                    href="https://linkedin.com/in/tu-perfil"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-4 bg-gray-100 dark:bg-gray-500/10 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full transition-all duration-300 hover:scale-110 group"
+                    title="Ver LinkedIn"
+                  >
+                    <Linkedin className="w-6 h-6 dark:text-gray-800/700 group-hover:text-blue-500" />
+                  </a>
+                </div>
             </div>
           </div>
 
-          {/* Center - Profile Image */}
           <div className="lg:col-span-3 flex justify-center">
             <div className="relative group">
-              {/* Background glow effect */}
               <div className="absolute -inset-4 bg-gradient-to-r from-red-500/20 via-red-500/10 to-transparent rounded-full blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
               
-              {/* Main image container */}
               <div className="relative w-80 h-80 rounded-full overflow-hidden bg-gradient-to-br from-red-500/20 to-transparent p-1">
                 <div className="w-full h-full rounded-full overflow-hidden bg-gray-200 dark:bg-gray-700 shadow-2xl">
                   <img 
@@ -81,16 +99,13 @@ const Hero = () => {
                 </div>
               </div>
               
-              {/* Decorative elements */}
               <div className="absolute -top-4 -right-4 w-8 h-8 bg-red-500 rounded-full shadow-lg animate-pulse"></div>
               <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-red-400 rounded-full opacity-70"></div>
               
-              {/* Floating ring */}
               <div className="absolute -inset-2 border-2 border-red-500/30 rounded-full animate-spin-slow opacity-60"></div>
             </div>
           </div>
 
-          {/* Right - Stats */}
           <div className="lg:col-span-3 space-y-8">
             <div className="space-y-6">
               {stats.map((stat, index) => (
@@ -107,7 +122,6 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Services Grid */}
         <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <div key={index} className="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">

@@ -33,10 +33,10 @@ const App = () => {
         <Navbar />
         <NavigationTimeline />
         <Hero />
+        <Projects />
+        <Skills />
         <AboutMe />
         <MyResume />
-        <Skills/>
-        <Projects />
         <Contact />
       </div>
     </ThemeContext.Provider>

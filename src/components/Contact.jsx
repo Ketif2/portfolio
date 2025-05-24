@@ -18,15 +18,14 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 bg-gray-50 dark:bg-gray-900 relative">
+    <section id="contact" className="py-20 px-4 relative">
       <div className="max-w-7xl mx-auto">
         
-        {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
             <span className="text-red-500">CONTACTO</span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
+          <p className="font-semibold dark:text-gray-400/800 max-w-2xl mx-auto text-lg">
             ¡Contactame y hablemos!
           </p>
           <div className="w-20 h-1 bg-red-500 mx-auto mt-4 rounded-full"></div>
@@ -34,13 +33,12 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           
-          {/* Contact Info */}
           <div className="lg:col-span-2 space-y-8">
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+              <h2 className="text-2xl font-bold dark:text-gray- mb-6">
                 Información de Contacto
               </h2>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
+              <p className="text-gray-600 dark:text-gray-400/800 leading-relaxed mb-8">
                 Estoy disponible para nuevas oportunidades y proyectos interesantes. 
               </p>
             </div>
@@ -80,10 +78,9 @@ const Contact = () => {
               ))}
             </div>
 
-            {/* CV Download */}
-            <div className="bg-gradient-to-r from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-800/20 rounded-xl p-6 border border-red-200 dark:border-red-800">
+            <div className="bg-gradient-to-r from-red-50 to-red-100 dark:from-red-700/100 dark:to-red-100/10 rounded-xl p-6 border border-red-200 dark:border-red-800">
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center text-xl">
+                <div className="w-12 h-12 rounded-lg flex items-center justify-center text-3xl">
                   📄
                 </div>
                 <div className="flex-1">
@@ -95,7 +92,7 @@ const Contact = () => {
                   </p>
                 </div>
                 <a
-                  href="/path-to-your-cv.pdf" // Reemplaza con la ruta real
+                  href="/cv/KevinRevelo.pdf" 
                   download="Kevin_Revelo_CV.pdf"
                   className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 flex items-center space-x-2"
                 >
@@ -108,9 +105,7 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Email Contact Section */}
           <div className="space-y-6">
-            {/* Email Input */}
             <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
                 Contacto Rápido
@@ -132,7 +127,6 @@ const Contact = () => {
                 />
               </div>
 
-              {/* Email Direct Button */}
               <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 border border-blue-200 dark:border-blue-800">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
@@ -162,7 +156,7 @@ const Contact = () => {
                 )}
               </div>
             </div>
-            {/* Back to Top Button */}
+            
             <div className="text-center mt-16">
               <button
                 onClick={scrollToTop}
@@ -173,7 +167,7 @@ const Contact = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
                 </svg>
               </button>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+              <p className="text-sm text-gray-600 dark:text-gray-800/600 mt-2">
                 Volver al inicio
               </p>
             </div>

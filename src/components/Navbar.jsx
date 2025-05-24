@@ -21,13 +21,14 @@ const Navbar = () => {
     setIsMobileMenuOpen(false);
   };
 
+  // Nuevo orden: Home - Projects - Skills - About Me - Resume - Contact
   const navLinks = [
     { href: '#inicio', label: 'Home' },
+    { href: '#proyectos', label: 'Projects' },
+    { href: '#skills', label: 'Skills' },
     { href: '#about', label: 'About Me' },
     { href: '#resume', label: 'Resume' },
-    { href: '#skills', label: 'Skills' }, 
-    { href: '#proyectos', label: 'Projects' },
-    { href: '#contact', label: 'Contact Me' }
+    { href: '#contact', label: 'Contact' }
   ];
 
    return (
@@ -58,7 +59,6 @@ const Navbar = () => {
               {isDarkMode ? <Sun size={24} /> : <Moon size={24} />}
             </button>
             
-            {/* Mobile */}
             <div className="md:hidden">
               <button
                 onClick={toggleMobileMenu}
@@ -72,7 +72,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
           <div className="px-4 py-4 space-y-3">

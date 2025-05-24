@@ -2,7 +2,7 @@ import { trajectoryData } from '../../data/Data';
 
 const TrajectoryTab = () => {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 dark:text-gray-100">
       <h3 className="text-xl font-bold mb-4">Trayectoria Estudiantil & Profesional</h3>
       <div className="relative">
         <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-red-500"></div>

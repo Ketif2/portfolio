@@ -34,7 +34,6 @@ const InterestsTab = () => {
     >
       <div className="relative overflow-hidden flex items-center space-x-3 bg-gray-100 dark:bg-gray-800 rounded-lg p-3 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-500 cursor-pointer group">
         
-        {/* Ripple Effects */}
         {ripples.map(ripple => (
           <span
             key={ripple.id}
@@ -61,7 +60,6 @@ const InterestsTab = () => {
           </p>
         </div>
 
-        {/* Floating particles */}
         <div className="particle particle-1"></div>
         <div className="particle particle-2"></div>
         <div className="particle particle-3"></div>
@@ -72,9 +70,8 @@ const InterestsTab = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 h-full">
       
-      {/* Left Column - Intereses */}
       <div className="space-y-4">
-        <h3 className="text-center text-lg font-bold text-red-500">Mis Intereses</h3>
+        <h3 className="text-center text-lg font-bold text-gray-100">Mis Intereses</h3>
         
         <div className="space-y-3">
           {interestsData.map((interest, index) => (
@@ -88,9 +85,8 @@ const InterestsTab = () => {
         </div>
       </div>
 
-      {/* Right Column - Habilidades Blandas */}
       <div className="space-y-4">
-        <h3 className="text-center text-lg font-bold text-red-500">Habilidades Blandas</h3>
+        <h3 className="text-center text-lg font-bold text-gray-100">Habilidades Blandas</h3>
         
         <div className="space-y-3">
           {softSkillsData.map((skill, index) => (

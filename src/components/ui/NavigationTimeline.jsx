@@ -6,16 +6,16 @@ const NavigationTimeline = () => {
  
  const sections = [
    { id: 'inicio', href: '#inicio' },
+   { id: 'proyectos', href: '#proyectos' },
+   { id: 'skills', href: '#skills' },
    { id: 'about', href: '#about' },
    { id: 'resume', href: '#resume' },
-   { id: 'skills', href: '#skills' },
-   { id: 'proyectos', href: '#proyectos' },
    { id: 'contact', href: '#contact' }
  ];
 
  useEffect(() => {
    const handleScroll = () => {
-     const sectionsIds = ['inicio', 'about', 'resume', 'skills', 'proyectos', 'contact'];
+     const sectionsIds = ['inicio', 'proyectos', 'skills', 'about', 'resume', 'contact'];
      const scrollPosition = window.scrollY + 100;
      
      let current = 0;
