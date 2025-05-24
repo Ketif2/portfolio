@@ -73,7 +73,7 @@ const Hero = () => {
                   </a>
                   
                   <a
-                    href="https://linkedin.com/in/tu-perfil"
+                    href="https://www.linkedin.com/in/kevin-revelo-flores-820262295/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-4 bg-gray-100 dark:bg-gray-500/10 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full transition-all duration-300 hover:scale-110 group"
