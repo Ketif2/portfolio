@@ -92,7 +92,7 @@ const Contact = () => {
                   </p>
                 </div>
                 <a
-                  href="/cv/KevinRevelo.pdf" 
+                  href="/cv/CV_KevinRevelo.pdf" 
                   download="Kevin_Revelo_CV.pdf"
                   className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 flex items-center space-x-2"
                 >
